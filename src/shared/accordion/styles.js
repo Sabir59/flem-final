@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { css } from "styled-components";
 
 export const Container = styled.div`
   max-width: 355px;
@@ -27,4 +28,14 @@ export const Details = styled.p`
   line-height: 189.68%;
   max-width: 310px;
   margin-left: 36px;
+  max-height: 0;
+  overflow: hidden;
+  transition:all .4s;
+
+  ${(props) =>
+    props.noHeight &&
+    css`
+      max-height: 1200px;
+      overflow: visible;
+    `} }
 `;
